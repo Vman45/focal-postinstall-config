@@ -209,7 +209,7 @@ This document contains instructions I follow to configure my 2015 Macbook Pro af
 
 ## Legalese
 
-* Obviously, what I want in my system might be quite different from what someone else might need. If following these instructions blows up your PC, that's your responsiblity.
+* Obviously, what I want in my system might be quite different from what someone else might need. If following these instructions blows up your PC, that's your responsiblity. See `LICENSE` file for more details.
 
-* Screenshots and sources in this repo might contain copyrighted material. They are included for illustration purposes only and not intended to infringe in any way. However, if you are the copyright holder and don't want your content here, let me know and I'll take it down.
+* Screenshots and assets folders in this repo might contain copyrighted material. They are included for illustration purposes only and not intended to infringe in any way. However, if you are the copyright holder and don't want your content here, let me know and I'll take it down.
 
