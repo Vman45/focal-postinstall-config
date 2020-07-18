@@ -213,6 +213,15 @@ See more in the screenshots directory.
     
     Now the option to resize images is available in Files right-click menu
 
+
+1. Install flatpak and flathub
+
+    ```sh
+    sudo apt install gnome-software gnome-software-plugin-flatpak
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    snap remove snap-store
+    ```
+
 ## Legalese
 
 * Obviously, what I want in my system might be quite different from what someone else might need. If following these instructions blows up your PC, that's your responsiblity. See `LICENSE` file for more details.
