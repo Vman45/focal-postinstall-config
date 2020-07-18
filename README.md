@@ -59,9 +59,11 @@ This document contains instructions I follow to configure my 2015 Macbook Pro af
 1. Unpack and apply UI theme
 
     ```sh
+    cd ~/Downloads
+    wget https://github.com/rustomax/focal-postinstall-config/raw/master/assets/Qogir-dark.tar.xz
     mkdir ~/.themes
     cd ~/.themes
-    tar xvf /media/max/writable/backup/Themes/Qogir-dark.tar.xz
+    tar xvf ~/Downloads/Qogir-dark.tar.xz
     ```
 
     Use gnome-tweaks to set Shell and GTK themes
@@ -69,6 +71,8 @@ This document contains instructions I follow to configure my 2015 Macbook Pro af
 1. Unpack and apply icon theme
 
     ```sh
+    cd ~/Downloads
+    wget https://github.com/rustomax/focal-postinstall-config/raw/master/assets/Zafiro-Icons-Blue.tar.xz
     mkdir ~/.icons
     cd ~/.icons
     tar xvf /media/max/writable/backup/Themes/Zafiro-Icons-Blue.tar.xz
