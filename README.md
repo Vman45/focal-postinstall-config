@@ -2,7 +2,13 @@
 
 ## Rationale
 
-This document contains instructions I follow to configure my 2015 Macbook Pro after installing Ubuntu 20.04 Focal Fossa. While I like the default install, it doesn't quite have everything I want to have a comfortable environment. See screenshots directory to get a taste of the end result.
+This document contains instructions I follow to configure my 2015 Macbook Pro after installing Ubuntu 20.04 Focal Fossa. While I like the default install, it doesn't quite have everything I want to have a comfortable environment.
+
+Here is what the end result looks like:
+
+![Desktop](screenshots/desktop.png)
+
+See more in the screenshots directory.
 
 ## Instructions
 
