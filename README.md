@@ -1,5 +1,11 @@
 # Things to do after installing Ubuntu 20.04
 
+## Rationale
+
+This document contains instructions I follow to configure my 2015 Macbook Pro after installing Ubuntu 20.04 Focal Fossa. While I like the default install, it doesn't quite have everything I want to have a comfortable environment. See screenshots directory to get a taste of the end result.
+
+## Instructions
+
 1. In settings, disable automatic display brightness adjustment
 
 1. Install pending automatic updates and reboot
@@ -180,3 +186,15 @@
     ```
 
     Restart gEdit and enable desired plugins
+    
+1. Install additional software
+    * Lollypop music player
+    * Shotwell photo manager
+    * Celluloid video player
+
+## Legalese
+
+* Obviously, what I want in my system might be quite different from what someone else might need. If following these instructions blows up your PC, that's your responsiblity.
+
+* Screenshots and sources in this repo might contain copyrighted material. They are included for illustration purposes only and not intended to infringe in any way. However, if you are the copyright holder and don't want your content here, let me know and I'll take it down.
+
