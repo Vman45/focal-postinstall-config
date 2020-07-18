@@ -31,8 +31,7 @@
 
     Configure extensions in Chrome
 
-
-1. Install and configure the following extensions from https://extensions.gnome.org:
+1. Install and configure the following gnome shell extensions from https://extensions.gnome.org:
 
     * [Coverflow Alt Tab](https://extensions.gnome.org/extension/97/coverflow-alt-tab/)
     * [Dash-to-dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
@@ -84,18 +83,22 @@
 
     Follow the script's instructions to setup the wallpaper
 
-1. Install fira code and configure terminal for it
+1. Install Fira Code powerline font and configure Gnome terminal for it
 
     ```sh
     sudo apt install fonts-firacode
     ```
 
-1. Install fish
+1. Install `fish` shell
 
     ```sh
     sudo apt-get install fish
     chsh -s /usr/bin/fish
+    ```
+    
     Reboot
+    
+    ```sh
     sudo apt install curl
     curl -L https://get.oh-my.fish | fish
     omf install agnoster
@@ -149,13 +152,12 @@
     echo "set -gx PATH /home/max/.nimble/bin \$PATH" >> ~/.config/fish/config.fish
     ```
     
-    Restart shell and test
+    Restart terminal and test
     ```sh
     nim --version
     ```
 
-
-1. Remove default shell extensions
+1. Remove default Gnome shell extensions to prevent conflicts with the ones we installed earlier
 
     ```sh
     sudo rm -Rf /usr/share/gnome-shell/extensions/*
@@ -163,9 +165,7 @@
 
 1. Install Nim file renamer `fren`
 
-    ```sh
     Follow instructions https://github.com/rustomax/nim-fren/blob/master/README.md
-    ```
     
 1. Install useful gEdit plugins, including Nim syntax highlighter and MD preview
 
