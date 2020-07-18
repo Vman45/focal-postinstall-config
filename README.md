@@ -192,6 +192,15 @@ This document contains instructions I follow to configure my 2015 Macbook Pro af
     * Shotwell photo manager
     * Celluloid video player
 
+1. Install image resizer for Gnome Files
+
+    ```sh
+    sudo apt install imagemagick nautilus-image-converter
+    nautilus -q
+    ```
+    
+    Now the option to resize images is available in Files right-click menu
+
 ## Legalese
 
 * Obviously, what I want in my system might be quite different from what someone else might need. If following these instructions blows up your PC, that's your responsiblity.
