@@ -21,7 +21,9 @@ This document contains instructions I follow to configure my 2015 Macbook Pro af
 1. Copy wallpapers from backup and change wallpaper using gnome-tweaks
 
     ```sh
-    sudo cp /media/max/writable/backup/Wallpapers/* /usr/share/backgrounds
+    cd ~/Downloads
+    wget https://github.com/rustomax/focal-postinstall-config/raw/master/assets/futuristic-72C0.jpg
+    sudo cp ~/Downloads/Wallpapers/* /usr/share/backgrounds
     ```
     
 1. Configure extensions in Firefox
@@ -75,7 +77,7 @@ This document contains instructions I follow to configure my 2015 Macbook Pro af
     wget https://github.com/rustomax/focal-postinstall-config/raw/master/assets/Zafiro-Icons-Blue.tar.xz
     mkdir ~/.icons
     cd ~/.icons
-    tar xvf /media/max/writable/backup/Themes/Zafiro-Icons-Blue.tar.xz
+    tar xvf ~/Downloads/Zafiro-Icons-Blue.tar.xz
     ```
 
     Use gnome-tweaks to set Icon theme
@@ -159,7 +161,7 @@ This document contains instructions I follow to configure my 2015 Macbook Pro af
 
     ```sh
     curl https://nim-lang.org/choosenim/init.sh -sSf | sh
-    echo "set -gx PATH /home/max/.nimble/bin \$PATH" >> ~/.config/fish/config.fish
+    echo "set -gx PATH /home/<user>/.nimble/bin \$PATH" >> ~/.config/fish/config.fish
     ```
     
     Restart terminal and test
