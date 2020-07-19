@@ -18,7 +18,7 @@ See more eye candy in the screenshots directory.
    sudo apt-get update
    sudo apt-get upgrade
    sudo apt-get dist-upgrade
-   sudo apt-get install git gnome-tweaks vim
+   sudo apt-get install git gnome-tweaks vim curl
    sudo apt autoremove
    ```
 
@@ -110,7 +110,6 @@ See more eye candy in the screenshots directory.
     Reboot
     
     ```sh
-    sudo apt install curl
     curl -L https://get.oh-my.fish | fish
     omf install agnoster
     echo "set fish_greeting" > ~/.config/fish/config.fish
