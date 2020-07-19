@@ -222,6 +222,46 @@ See more in the screenshots directory.
     snap remove snap-store
     ```
 
+1. Install Apple webcam driver
+
+    ```sh
+    cd ~/Downloads
+    sudo apt-get install git curl xzcat cpio
+    git clone https://github.com/patjak/facetimehd-firmware.git
+    cd facetimehd-firmware
+    make
+    sudo make install
+    cd ..
+    sudo apt-get install kmod libssl-dev checkinstall
+    git clone https://github.com/patjak/bcwc_pcie.git
+    cd bcwc_pcie
+    make
+    sudo make install
+    sudo depmod
+    sudo modprobe -r bdc_pci
+    sudo modprobe facetimehd
+    sudo echo "facetimehd" >> /etc/modules
+    cd ..
+    mkdir color-profiles
+    cd color-profiles
+    wget https://github.com/rustomax/focal-postinstall-config/raw/master/assets/apple-camera/* .
+    sudo cp *.dat /lib/firmware/facetimehd/
+    sudo rmmod facetimehd
+    sudo modprobe facetimehd
+    ```
+    
+    Check that the camera kernel module is loaded:
+    
+    ```sh
+    $ lsmod | grep -i facetime
+    
+    facetimehd             94208  0
+    videobuf2_dma_sg       16384  1 facetimehd
+    videobuf2_v4l2         24576  1 facetimehd
+    videobuf2_common       49152  2 videobuf2_v4l2,facetimehd
+    videodev              225280  3 videobuf2_v4l2,facetimehd,videobuf2_common
+    ```
+
 ## Legalese
 
 * Obviously, what I want in my system might be quite different from what someone else might need. If following these instructions blows up your PC, that's your responsiblity. See `LICENSE` file for more details.
