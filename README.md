@@ -8,44 +8,50 @@ Here is what the end result looks like:
 
 ![Desktop](screenshots/desktop.png)
 
-See more in the screenshots directory.
+See more eye candy in the screenshots directory.
 
 ## Instructions
 
-1. In settings, disable automatic display brightness adjustment
+1. Install pending automatic updates, requred software, and reboot
 
-1. Install pending automatic updates and reboot
+   ```sh
+   sudo apt-get update
+   sudo apt-get upgrade
+   sudo apt-get dist-upgrade
+   sudo apt-get install git gnome-tweaks vim
+   sudo apt autoremove
+   ```
 
-1. Configure keyboard shortcuts
-
-1. Install gnome tweaks
-
-    ```sh
-    sudo apt-get install gnome-tweaks
-    ```
-
-1. Copy wallpapers from backup and change wallpaper using gnome-tweaks
+1. Clone this repo
 
     ```sh
     cd ~/Downloads
-    wget https://github.com/rustomax/focal-postinstall-config/raw/master/assets/futuristic-72C0.jpg
-    sudo cp ~/Downloads/Wallpapers/* /usr/share/backgrounds
+    git clone https://github.com/rustomax/focal-postinstall-config.git
+    ```
+
+1. In settings, disable automatic display brightness adjustment
+
+1. Configure keyboard shortcuts
+
+1. Replace Ubuntu wallpapers with our own and set it up using gnome-tweaks
+
+    ```sh
+    sudo rm -Rf /usr/share/backgrounds/*
+    cd ~/Downloads/focal-postinstall-config
+    sudo cp assets/futuristic-72C0.jpg /usr/share/backgrounds/
     ```
     
 1. Configure extensions in Firefox
 
-1. Install and configure Google Chrome
+1. Install and configure extensions in Google Chrome
 
     ```sh
-    sudo apt-get install gdebi
-    cd ~/Downloads
+    cd /tmp
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    sudo gdebi google-chrome-stable_current_amd64.deb
+    sudo apt install ./google-chrome-stable_current_amd64.deb
     ```
 
-    Configure extensions in Chrome
-
-1. Install and configure the following gnome shell extensions from https://extensions.gnome.org:
+1. Install and configure the following gnome shell extensions and reboot:
 
     * [Coverflow Alt Tab](https://extensions.gnome.org/extension/97/coverflow-alt-tab/)
     * [Dash-to-dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
@@ -59,39 +65,26 @@ See more in the screenshots directory.
     * [CPU power](https://extensions.gnome.org/extension/945/cpu-power-manager/)
     * [Icon hider](https://github.com/ikalnitsky/gnome-shell-extension-icon-hider)
     * [Control blur on lock screen](https://extensions.gnome.org/extension/2935/control-blur-effect-on-lock-screen/)
-    
-1. Reboot
 
 1. Install language packs and keyboards in settings
 
-1. Unpack and apply UI theme
+1. Unpack and apply UI and icon theme
 
     ```sh
-    cd ~/Downloads
-    wget https://github.com/rustomax/focal-postinstall-config/raw/master/assets/Qogir-dark.tar.xz
     mkdir ~/.themes
     cd ~/.themes
-    tar xvf ~/Downloads/Qogir-dark.tar.xz
-    ```
-
-    Use gnome-tweaks to set Shell and GTK themes
-
-1. Unpack and apply icon theme
-
-    ```sh
-    cd ~/Downloads
-    wget https://github.com/rustomax/focal-postinstall-config/raw/master/assets/Zafiro-Icons-Blue.tar.xz
+    tar xvf ~/Downloads/focal-postinstall-config/assets/Qogir-dark.tar.xz
     mkdir ~/.icons
     cd ~/.icons
-    tar xvf ~/Downloads/Zafiro-Icons-Blue.tar.xz
+    tar xvf ~/Downloads/focal-postinstall-config/assets/Zafiro-Icons-Blue.tar.xz
     ```
 
-    Use gnome-tweaks to set Icon theme
+    Use gnome-tweaks to set Shell, GTK, Icon themes
 
 1. Configure login screen wallpaper
 
     ```sh
-    sudo apt install git libglib2.0-dev
+    sudo apt install libglib2.0-dev
     mkdir ~/Scripts
     cd ~/Scripts
     git clone https://github.com/PRATAP-KUMAR/focalgdm3.git
@@ -99,7 +92,7 @@ See more in the screenshots directory.
     sudo ./focalgdm3 --set
     ```
 
-    Follow the script's instructions to setup the wallpaper
+    Follow the script's instructions to set the wallpaper to `/usr/share/backgrounds/futuristic-72C0.jpg`
 
 1. Install Fira Code powerline font and configure Gnome terminal for it
 
@@ -121,15 +114,9 @@ See more in the screenshots directory.
     curl -L https://get.oh-my.fish | fish
     omf install agnoster
     echo "set fish_greeting" > ~/.config/fish/config.fish
-    ```    
-
-1. Install text editors
-
-    ```sh
-    sudo apt install micro vim
     ```
     
-1. Install Noto fonts and configure the UI fonts in settings
+1. Install Noto fonts and configure the UI fonts in Tweaks
 
     ```sh
     sudo apt install fonts-noto-core fonts-noto-extra
@@ -143,23 +130,7 @@ See more in the screenshots directory.
     sudo apt install dconf-editor
     ```
 
-    In dconf editor, set `org.gnome.desktop.sound` to `False`
-
-
-1. Update to the latest version of packages
-
-    ```sh
-    sudo apt-get update
-    sudo apt-get upgrade
-    ```
-    
-1. Remove unneeded packages
-
-    ```sh
-    sudo apt autoremove
-    ```
-        
-    Reboot for a good measure
+    In dconf editor, set `org.gnome.desktop.sound.event-sounds` and `org.gnome.desktop.sound.input-feedback-sounds` to `False`
 
 1. Disable bluetooth
 
@@ -174,16 +145,6 @@ See more in the screenshots directory.
     ```sh
     nim --version
     ```
-
-1. Remove default Gnome shell extensions to prevent conflicts with the ones we installed earlier
-
-    ```sh
-    sudo rm -Rf /usr/share/gnome-shell/extensions/*
-    ```
-
-1. Install Nim file renamer `fren`
-
-    Follow instructions https://github.com/rustomax/nim-fren/blob/master/README.md
     
 1. Install useful gEdit plugins, including Nim syntax highlighter and MD preview
 
@@ -199,10 +160,10 @@ See more in the screenshots directory.
 
     Restart gEdit and enable desired plugins
     
-1. Install additional software
-    * Lollypop music player
-    * Shotwell photo manager
-    * Celluloid video player
+1. Install media software
+   ```sh
+   sudo apt-get install lollypop shotwell celluloid
+   ```
 
 1. Install image resizer for Gnome Files
 
@@ -225,14 +186,13 @@ See more in the screenshots directory.
 1. Install Apple webcam driver
 
     ```sh
+    sudo apt-get install kmod libssl-dev checkinstall
     cd ~/Downloads
-    sudo apt-get install git curl xzcat cpio
     git clone https://github.com/patjak/facetimehd-firmware.git
     cd facetimehd-firmware
     make
     sudo make install
     cd ..
-    sudo apt-get install kmod libssl-dev checkinstall
     git clone https://github.com/patjak/bcwc_pcie.git
     cd bcwc_pcie
     make
@@ -240,16 +200,8 @@ See more in the screenshots directory.
     sudo depmod
     sudo modprobe -r bdc_pci
     sudo modprobe facetimehd
-    sudo echo "facetimehd" >> /etc/modules
-    cd ..
-    mkdir color-profiles
-    cd color-profiles
-    ```
-    
-    Dowload all `*.dat` files from https://github.com/rustomax/focal-postinstall-config/tree/master/assets/apple-camera/
-    
-    ```sh
-    sudo cp *.dat /lib/firmware/facetimehd/
+    sudo fish -c 'echo "facetimehd" >> /etc/modules'
+    sudo cp ~/Downloads/focal-postinstall-config/assets/apple-camera/*.dat /lib/firmware/facetimehd/
     sudo rmmod facetimehd
     sudo modprobe facetimehd
     ```
