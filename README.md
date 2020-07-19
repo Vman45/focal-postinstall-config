@@ -244,7 +244,11 @@ See more in the screenshots directory.
     cd ..
     mkdir color-profiles
     cd color-profiles
-    wget https://github.com/rustomax/focal-postinstall-config/raw/master/assets/apple-camera/* .
+    ```
+    
+    Dowload all `*.dat` files from https://github.com/rustomax/focal-postinstall-config/tree/master/assets/apple-camera/
+    
+    ```sh
     sudo cp *.dat /lib/firmware/facetimehd/
     sudo rmmod facetimehd
     sudo modprobe facetimehd
