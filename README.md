@@ -1,4 +1,4 @@
-# Things to do after installing Ubuntu 20.04
+# Ubuntu 20.04 Post-Install Config on MacBook Pro '15
 
 ## Rationale
 
@@ -144,7 +144,19 @@ See more eye candy in the screenshots directory.
     ```sh
     nim --version
     ```
-    
+
+1. Install rust
+
+   ```sh
+   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+   echo "set -gx PATH /home/max/.cargo/bin \$PATH" >> ~/.config/fish/config.fish
+   ```
+   
+   Restart terminal and test
+   ```sh
+   rustc --version
+   ```
+
 1. Install useful gEdit plugins, including Nim syntax highlighter and MD preview
 
     ```sh
@@ -179,7 +191,7 @@ See more eye candy in the screenshots directory.
     ```sh
     sudo apt install gnome-software gnome-software-plugin-flatpak
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    snap remove snap-store
+    # snap remove snap-store
     ```
 
 1. Install Apple webcam driver
